@@ -13,8 +13,6 @@ This part was solved with no code written.
 First thing to notice is that all we have is either an addition or multiplication, so it should be possible to convert intcode to some real machine instructions and execute them.  I choose C as a target, because it's fairly simple language to generate and C compilers are amazing at optimizing.
 This is where **vim** kicks in. Using some macros and normal mode editing I converted intcode instructions into C expressions manipulating an array of values. It looked like this:
 
----
-
 ```C
 int fun(int n, int k)
 {
