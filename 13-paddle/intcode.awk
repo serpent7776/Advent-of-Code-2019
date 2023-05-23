@@ -100,14 +100,6 @@ function eval(op, ip, m1, m2, m3) {
 	}
 }
 
-function init_mem() {
-	i = 0;
-	cmd = "tr , \"\n\" < input";
-	while ((cmd | getline) > 0)
-		mem[i++] = int($0);
-	close(cmd);
-}
-
 function exec() {
 	rbase = 0
 	ip = 0;
@@ -123,6 +115,5 @@ function exec() {
 }
 
 BEGIN {
-	init_mem();
 	exec();
 }
