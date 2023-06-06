@@ -23,6 +23,8 @@ END {
 	rows = row;
 	cols = col;
 	best = 0;
+	best_x = 0;
+	best_y = 0;
 	# for each asteroid at (x, y)
 	for (x = 0; x < rows; ++x) {
 		for (y = 0; y < cols; ++y) {
@@ -53,8 +55,10 @@ END {
 			}
 			if (seen > best) {
 				best = seen;
+				best_x = x;
+				best_y = y;
 			}
 		}
 	}
-	print(best);
+	print(best, best_x, best_y);
 }
