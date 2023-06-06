@@ -22,26 +22,27 @@ function max(a, b) {
 END {
 	rows = row;
 	cols = col;
+	best = 0;
 	# for each asteroid at (x, y)
 	for (x = 0; x < rows; ++x) {
 		for (y = 0; y < cols; ++y) {
-			if (a[x, y] != "#") continue;
+			if (a[y, x] != "#") continue;
 			seen = 0;
 			# check if asteroid at (row, col) can be seen
 			for (row = 0; row < rows; ++row) {
 				for (col = 0; col < cols; ++col) {
 					if (a[row, col] != "#") continue
-					if (x == row && y == col) continue; # ignore self
+					if (x == col && y == row) continue; # ignore self
 					# look for asteroids between (x, y) and (row, col)
-					dx = (row - x);
-					dy = (col - y);
+					dx = (col - x);
+					dy = (row - y);
 					dd = max(abs(dx), abs(dy));
 					visible = 1;
 					for (d = 1; d < dd; ++d) {
 						# look for any other asteroid at (px, py)
 						px = x + (d / dd) * dx;
 						py = y + (d / dd) * dy;
-						if (px == int(px) && py == int(py) && a[px, py] == "#") {
+						if (px == int(px) && py == int(py) && a[py, px] == "#") {
 							# asteroid found between (x, y) and (row, col)
 							visible = 0;
 							break;
