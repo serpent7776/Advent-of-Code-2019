@@ -50,6 +50,7 @@ function eval(op, ip, m1, m2, m3) {
 	} else if (op == 4) {
 		val = load(m1, mem[ip + 1]);
 		print val;
+		fflush();
 		return ip + 2;
 	} else if (op == 5) {
 		plval = mem[ip + 1];
