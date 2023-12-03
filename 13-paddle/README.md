@@ -1,12 +1,16 @@
-# part 1
+# AoC #13
+
+## Solution in awk
+
+### Part 1
 
 Run `./gen.sh`.
 
 This expects a file called `input` to contain your puzzle input.
 
-# part 2
+### Part 2
 
-Run `./gen3.sh`
+Run `./gen2.sh`
 
 This expects a file called `input` to contain your puzzle input.
 
